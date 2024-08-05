@@ -5,6 +5,7 @@ import Navbar from './Components/Navbar';
 import { Route, Routes } from 'react-router';
 import Home from './Pages/Home';
 import Login from './Pages/Login';
+import People from './Pages/People';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
 
           <Routes>
             <Route path='/' element={<Home />} /> 
-            <Route /> 
+            <Route path='/people' element={<People />} /> 
             <Route path="/login" element={<Login />} /> 
           </Routes>
      </>
