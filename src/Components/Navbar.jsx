@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
-import logo from "../Assets/turuncusiyah.png"
+import logo from "../Assets/turuncusiyah.png";
 
-const Navbar = () => {
+const Navbar = ({ isLogin, setIsLogin }) => {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
@@ -25,19 +25,31 @@ const Navbar = () => {
               {/* <a className="nav-link active" aria-current="page" href="/">
                 Home
               </a> */}
-              <NavLink to="/" className="nav-link">Home</NavLink>
+              <NavLink to="/" className="nav-link">
+                Home
+              </NavLink>
             </li>
             <li className="nav-item">
               {/* <a className="nav-link" href="/people">
                 People
               </a> */}
-              <NavLink className={'nav-link'} to={'/people'}>People</NavLink>
+              <NavLink className={"nav-link"} to={"/people"}>
+                People
+              </NavLink>
             </li>
             <li className="nav-item">
               {/* <a className="nav-link" href="/login">
                 Login
               </a> */}
-              <NavLink className={'nav-link'} to={'/login'}>Login</NavLink>
+              {isLogin ? (
+                <div className="nav-link" onClick={() => setIsLogin(false)}>
+                  Logout
+                </div>
+              ) : (
+                <NavLink className={"nav-link"} to={"/login"}>
+                  Login
+                </NavLink>
+              )}
             </li>
           </ul>
         </div>
